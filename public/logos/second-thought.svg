@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <circle cx="32" cy="32" r="32" fill="#000"/>
+  <text x="11" y="46" fill="#fff" font-family="Inter, Arial Black, sans-serif" font-size="34" font-weight="800">S</text>
+  <path d="M32 14h24M44 14v36" stroke="#fff" stroke-width="3.2" stroke-linecap="square"/>
+</svg>
