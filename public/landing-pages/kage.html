@@ -1637,6 +1637,50 @@ body::before{
 .gate-copy > *:not(.portrait){ margin-left:18px !important; margin-right:18px !important; }
 .gate-copy > .portrait{ margin:0 !important; }
 .portrait > *:not(.portrait-fr){ padding-left:18px !important; padding-right:18px !important; box-sizing:border-box; }
+
+/* ===== v9 · responsive hero, framed Vednix, bold headings, footer ===== */
+.hero-stage{ --pw:94svh; }
+.hero-photo img,.hero-silw img{ width:var(--pw) !important; height:auto !important; top:6% !important; margin-left:calc(var(--pw) * -0.58) !important; }
+.hero-photo img{ filter:grayscale(1) contrast(1.05) blur(var(--hb,0px)) !important; }
+@media (max-width:820px){ .hero-stage{ --pw:min(138vw,100svh); } .hero-photo img,.hero-silw img{ top:14% !important; } }
+.dev-wrap{ top:47% !important; height:auto !important; transform:translateY(-50%); overflow:visible !important; }
+.dev-word{ position:relative !important; padding:.14em 0 !important; line-height:1 !important; transform:scaleY(1.15) !important; }
+.hero-sweep{ position:absolute; inset:0; z-index:1; pointer-events:none; mix-blend-mode:screen; opacity:0; background:linear-gradient(100deg,transparent 38%,rgba(255,120,90,.2) 50%,transparent 62%); will-change:transform; }
+h1,h2,h3,.display,.ln{ font-weight:700 !important; letter-spacing:-.022em !important; }
+h2,h3,.display{ color:#f4f7f2; }
+html{ scroll-padding-top:100px; } #education,#certs{ scroll-margin-top:110px; }
+/* about photo smaller */
+@media (min-width:821px){ #gate .gate-copy{ max-width:480px; margin-left:auto !important; } }
+@media (max-width:820px){ #gate .gate-copy{ max-width:440px; margin-inline:auto !important; } }
+/* Vednix: one framed view */
+.pin-track{ width:auto !important; margin-left:0 !important; height:380vh; }
+.pin-stick{ padding:calc(var(--nav-h) + 6px) 0 14px !important; align-items:center !important; box-sizing:border-box; }
+.pin-stick .proj{ --fw:min(100%, calc((100svh - var(--nav-h) - 215px) * 16 / 9)); position:relative !important; display:flex !important; flex-direction:column; align-items:center; gap:16px; width:100% !important; height:auto !important; max-width:1180px; margin:0 auto !important; }
+.pin-stick .proj::after{ display:none !important; }
+.pin-stick .proj-plate{ position:relative !important; inset:auto !important; width:var(--fw) !important; height:auto !important; aspect-ratio:16/9; overflow:hidden; border:1px solid rgba(223,231,224,.16) !important; outline:none !important; background:#000; box-shadow:0 30px 80px -30px rgba(0,0,0,.9); }
+.pin-stick .vshots{ position:absolute !important; inset:0; aspect-ratio:auto; height:100%; width:100%; }
+.proj-plate .vshots img{ object-fit:cover; object-position:50% 0; }
+.pin-stick .proj-state{ position:absolute !important; top:10px; left:10px; right:auto !important; z-index:3; }
+.pin-stick .vcount{ left:auto; right:12px; bottom:10px; }
+.pin-stick .proj-body{ position:static !important; width:var(--fw); max-width:none !important; background:none !important; border:0 !important; -webkit-backdrop-filter:none; backdrop-filter:none; padding:0 !important; margin:0 !important; display:grid !important; grid-template-columns:1fr auto; gap:10px 28px; align-items:center; }
+.pin-stick .proj-body > :nth-child(1){ grid-column:1; }
+.pin-stick .proj-body .body-lg{ grid-column:1; margin:0 !important; font-size:14px !important; -webkit-line-clamp:2; }
+.pin-stick .proj-body .proj-links,.pin-stick .proj-body .proj-cta{ grid-column:2; grid-row:1 / span 2; margin:0 !important; }
+@media (max-width:700px){ .pin-stick .proj-body{ grid-template-columns:1fr; } .pin-stick .proj-body .proj-links,.pin-stick .proj-body .proj-cta{ grid-column:1; grid-row:auto; } .pin-stick .proj-body .display{ font-size:26px !important; } .pin-track{ height:340vh; } }
+/* footer */
+body .foot-grid{ display:grid !important; grid-template-columns:1.5fr 1fr 1fr 1fr !important; gap:clamp(24px,4vw,64px) !important; align-items:start; }
+body .foot-brand{ grid-column:auto !important; display:block !important; }
+body .foot-grid > div:nth-child(n+3){ padding-left:0 !important; border-left:0 !important; }
+body .foot-grid > div:nth-child(n+2){ min-width:0; }
+body .foot-grid ul{ margin:14px 0 0; padding:0; list-style:none; display:grid; gap:12px; }
+@media (max-width:900px){ body .foot-grid{ grid-template-columns:1fr 1fr !important; } body .foot-brand{ grid-column:1 / -1 !important; } }
+@media (max-width:520px){ body .foot-grid{ grid-template-columns:1fr 1fr !important; gap:26px 18px !important; } }
+body .foot-base{ display:flex !important; flex-wrap:wrap; justify-content:space-between; gap:10px 24px; }
+
+.hero-photo img{ -webkit-mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent),linear-gradient(180deg,#000 78%,transparent 100%); -webkit-mask-composite:source-in; mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent),linear-gradient(180deg,#000 78%,transparent 100%); mask-composite:intersect; }
+@media (max-width:820px){ .hero-stage{ --pw:min(112vw,70svh); } .hero-photo img,.hero-silw img{ top:22% !important; } .dev-wrap{ top:40% !important; } }
+.pin-stick .proj-plate,.pin-stick .proj-body{ align-self:center !important; } .pin-stick .proj::before{ display:none !important; }
+@media (max-width:700px){ .pin-stick .proj-state{ font-size:8px !important; padding:4px 8px !important; top:6px !important; left:6px !important; letter-spacing:.14em !important; } .pin-stick .vcount{ font-size:8px; bottom:6px; right:8px; } .vdots i{ width:10px; } .vdots i.on{ width:16px; } }
 </style>
 </head>
 <body data-layout-gallery="b" data-layout-curriculum="b" data-layout-footer="b">
@@ -1685,6 +1729,7 @@ body::before{
     <div class="hero-photo" id="heroPhoto"><img src="/tech/hero-photo2.webp" alt="" width="941" height="982" fetchpriority="high" decoding="async"></div>
     <div class="hero-veil"></div>
     <span class="hero-rule"></span>
+    <div class="hero-sweep" id="heroSweep"></div>
     <div class="door door-l" id="doorL"><div class="dn"><span class="dl"><span class="ln"><span class="ch" style="--i:0">A</span><span class="ch" style="--i:1">B</span><span class="ch" style="--i:2">H</span><span class="ch" style="--i:3">I</span><span class="ch" style="--i:4">N</span><span class="ch" style="--i:5">A</span><span class="ch" style="--i:6">V</span></span><span class="ln"><span class="ch" style="--i:7">S</span><span class="ch" style="--i:8">I</span><span class="ch" style="--i:9">N</span><span class="ch" style="--i:10">G</span><span class="ch" style="--i:11">H</span></span><span class="sub">portfolio</span></span></div></div>
     <div class="door door-r" id="doorR"><div class="dn"><span class="dl"><span class="ln"><span class="ch" style="--i:0">A</span><span class="ch" style="--i:1">B</span><span class="ch" style="--i:2">H</span><span class="ch" style="--i:3">I</span><span class="ch" style="--i:4">N</span><span class="ch" style="--i:5">A</span><span class="ch" style="--i:6">V</span></span><span class="ln"><span class="ch" style="--i:7">S</span><span class="ch" style="--i:8">I</span><span class="ch" style="--i:9">N</span><span class="ch" style="--i:10">G</span><span class="ch" style="--i:11">H</span></span><span class="sub">portfolio</span></span></div></div>
     <span class="hero-seam" id="heroSeam"></span>
@@ -1897,7 +1942,7 @@ body::before{
   </div>
 
   <div class="cv" data-rv="up">
-    <div class="cv-head"><span class="k"><b>ii</b> — Education</span><span class="rule"></span><span class="k jp">Academics</span></div>
+    <div class="cv-head" id="education"><span class="k"><b>ii</b> — Education</span><span class="rule"></span><span class="k jp">Academics</span></div>
     <div class="cv-grid cv-grid--wide">
       <div class="cv-col">
         <div class="cv-item">
@@ -1914,7 +1959,7 @@ body::before{
   </div>
 
   <div class="cv" data-rv="up">
-    <div class="cv-head"><span class="k"><b>iii</b> — Certifications</span><span class="rule"></span><span class="k jp">Credentials</span></div>
+    <div class="cv-head" id="certs"><span class="k"><b>iii</b> — Certifications</span><span class="rule"></span><span class="k jp">Credentials</span></div>
     <div class="cert-grid">
       <div class="cert"><span class="cert-y">2026</span><b>Fundamentals of DevOps on AWS</b><span>AWS · Simplilearn</span><span class="cert-t">AWS Cloud Fundamentals · DevOps Concepts · CI/CD Basics · Cloud Infrastructure</span></div>
       <div class="cert"><span class="cert-y">2026</span><b>Innovating with Google Cloud AI</b><span>Google Cloud · Simplilearn</span><span class="cert-t">Generative AI Fundamentals · Google Cloud AI Services · AI Applications · Prompt Engineering Basics</span></div>
@@ -1987,19 +2032,19 @@ body::before{
       <li><a href="#gate" data-cursor>About me</a></li>
       <li><a href="#pathways" data-cursor>Selected work</a></li>
       <li><a href="#lessons" data-cursor>Skills &amp; practice</a></li>
+      <li><a href="#education" data-cursor>Education</a></li>
+      <li><a href="#certs" data-cursor>Certifications</a></li>
       <li><a href="#eternity" data-cursor>Contact</a></li>
     </ul></div>
-    <div><h4>Elsewhere</h4><ul>
+    <div><h4>Projects</h4><ul>
       <li><a href="https://vednix.vercel.app" target="_blank" rel="noopener noreferrer" data-cursor>Vednix AI — live</a></li>
       <li><a href="https://github.com/abhinavsinghparihar/vednix" target="_blank" rel="noopener noreferrer" data-cursor>Vednix source</a></li>
-      <li><a href="https://github.com/abhinavsinghparihar/second-thought" target="_blank" rel="noopener noreferrer" data-cursor>Second Thought</a></li>
-      <li><a href="https://github.com/abhinavsinghparihar" target="_blank" rel="noopener noreferrer" data-cursor>GitHub profile</a></li>
+      <li><a href="https://github.com/abhinavsinghparihar/second-thought" target="_blank" rel="noopener noreferrer" data-cursor>Second Thought source</a></li>
     </ul></div>
     <div><h4>Contact</h4><ul>
       <li><a href="mailto:thakurabhinavsinghparihar@gmail.com" data-cursor>Email</a></li>
       <li><a href="https://linkedin.com/in/thakurabhinavsinghparihar" target="_blank" rel="noopener noreferrer" data-cursor>LinkedIn</a></li>
-      <li><a href="#gate" data-cursor>Education</a></li>
-      <li><a href="#lessons" data-cursor>Certifications</a></li>
+      <li><a href="https://github.com/abhinavsinghparihar" target="_blank" rel="noopener noreferrer" data-cursor>GitHub profile</a></li>
     </ul></div>
   </div>
   <div class="foot-base">
@@ -5641,7 +5686,7 @@ function queue() { TIMER ? setTimeout(() => frame(performance.now()), 16) : requ
 var HERO = (function () {
   var stage = document.querySelector('.hero-stage'), ph = document.getElementById('heroPhoto'),
       dL = document.getElementById('doorL'), dR = document.getElementById('doorR'), seam = document.getElementById('heroSeam'),
-      cue = document.querySelector('.hero-cue'), sil = document.getElementById('heroSil'), gate = document.getElementById('gate'),
+      cue = document.querySelector('.hero-cue'), dev = document.querySelector('.dev-wrap'), sweep = document.getElementById('heroSweep'), sil = document.getElementById('heroSil'), gate = document.getElementById('gate'),
       reduce = matchMedia('(prefers-reduced-motion: reduce)'), pend = false;
   function ease(a, b, v) { if (v <= a) return 0; if (v >= b) return 1; var t = (v - a) / (b - a); return t * t * (3 - 2 * t); }
   function upd() {
@@ -5658,6 +5703,11 @@ var HERO = (function () {
     stage.style.visibility = away > 0.99 ? 'hidden' : 'visible';
     var drift = clamp((sc - 0.64) / 0.9, 0, 1);
     var po = 0.4 + 0.6 * p;
+    if (!reduce.matches) {
+      stage.style.setProperty('--hb', (14 * (1 - p)).toFixed(2) + 'px');
+      var wx = 50 * (1 - ease(0.12, 0.85, p)); dev.style.clipPath = 'inset(-10% ' + wx.toFixed(2) + '% -10% ' + wx.toFixed(2) + '%)';
+      sweep.style.transform = 'translate3d(' + (-110 + 220 * ease(0.08, 0.95, p)).toFixed(1) + '%,0,0)'; sweep.style.opacity = (Math.sin(Math.PI * clamp((p - 0.05) / 0.9, 0, 1))).toFixed(3);
+    }
     ph.style.opacity = po.toFixed(3); sil.style.opacity = po.toFixed(3);
     var tr = 'scale(' + (1.2 - 0.2 * p).toFixed(4) + ')'; if (!reduce.matches || p >= 0.999) { ph.style.transform = tr; sil.style.transform = tr; }
   }
@@ -5809,7 +5859,7 @@ if(i===cur)return;cur=i;im.forEach(function(m,k){m.classList.toggle('on',k===i)}
 addEventListener('scroll',function(){if(!pend){pend=true;requestAnimationFrame(upd)}},{passive:true});addEventListener('resize',upd);upd();})();
 </script>
 <script>
-(function(){var w=document.querySelector('.dw-g');if(!w)return;function fit(){w.style.fontSize='100px';var k=(w.scrollWidth||1);w.style.fontSize=(100*innerWidth*0.97/k)+'px';}
+(function(){var w=document.querySelector('.dw-g');if(!w)return;function fit(){w.style.letterSpacing='0px';w.style.fontSize='100px';var k=w.scrollWidth||1,t=innerWidth*0.97,fs=100*t/k,cap=innerHeight*0.46;if(fs>cap){fs=cap;w.style.fontSize=fs+'px';var c=w.scrollWidth;w.style.letterSpacing=Math.max(0,(t-c)/7)+'px';}else{w.style.fontSize=fs+'px';}}
 fit();addEventListener('resize',fit);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);})();
 </script>
 </body>

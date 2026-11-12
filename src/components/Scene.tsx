@@ -12,7 +12,7 @@ export function Scene() {
       <KageLandingPage
         headingFont="onest"
         bodyFont="onest"
-        headingWeight="400"
+        headingWeight="600"
         bodyWeight="300"
         primaryColor="#e0231c"
         headingSize={46}
